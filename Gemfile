@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'high_voltage'
 gem 'pg'
 gem 'rails_12factor'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'
