@@ -13,10 +13,13 @@ gem 'jbuilder'
 gem 'high_voltage'
 gem 'pg'
 gem 'rails_12factor'
+gem 'ruby-progressbar'
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem "rspec-rails", "~> 3.0.0"
+  gem "factory_girl_rails"
 end
 
