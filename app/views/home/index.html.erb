@@ -1,0 +1,54 @@
+<%= content_for(:page_title, "Greg McGuirk") %> 
+
+<div class="home">
+
+  <nav class="left-dock sliding-panel-content">
+    <section class="links">
+      <h4 class='section-title'> Links </h4>
+      <ul>
+        <li><a href="https://www.linkedin.com/pub/greg-mcguirk/32/603/686/en">LinkedIn</a></li>
+        <li><a href="https://twitter.com/bgregmc">Twitter</a> </li>
+        <li><a href="https://github.com/bgreg">Github</a></li>
+        <li><a href="http://www.meetup.com/Silicone-Valley-Ruby-Workshop/">RubyWorkshop</a></li>
+        <li><a href="mailto:bgregmc@icloud.com?Subject=Hello" target="_top">Contact Me</a></li>
+      </ul>
+    </section>
+
+    <section class="ruby-cve">
+      <h4 class='section-title'> <%= @exposures.count %> Ruby CVE's in the last 90 days
+        <a href="https://web.nvd.nist.gov/view/vuln/search-results?query=Ruby&search_type=all&cves=on">Details</a> 
+      </h4>
+      
+      <section class="ruby-cve-container">
+        <% @exposures.reverse.each do |exposure| %> 
+          <section class="sub-section">
+            <ul>
+              <li> 
+                <p class="sub-section-title">
+                  <%= exposure.cve_id %>
+                </p>
+                <p class="sub-section-title">
+                  <%= time_tag Date.parse exposure.published %> 
+                </p>
+                <p class="sub-section-title">
+                 <%= exposure.cvss_severity %> 
+                </p>
+              </li>
+              <li>
+                <p class="summary">
+                <%= exposure.summary %> 
+                </p>
+              </li>
+            </ul>
+          </section>
+        <% end %> 
+      </section>
+
+    </section>
+  </nav>
+
+  <section class="main-content">
+    <h3> Greg Mcguirk </h3>
+    <%= image_tag("imonaboat.jpg", class: 'main_photo') %> 
+  </section>
+</div>

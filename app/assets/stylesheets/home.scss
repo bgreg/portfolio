@@ -1,0 +1,62 @@
+@import 'bourbon';
+@import 'neat';
+$background: #EDEDEF;
+$dock_color: #2E2E2E;
+
+html,body{
+  background-color: $background;
+  font: 20px Monaco, Monospace; 
+}
+
+.left-dock{
+  background-color: $dock_color;
+
+  border: 1px solid black;
+  
+  @include position(fixed, 0px auto auto 0px);
+  @include size(300px 100%);
+  .links{
+    li{ 
+      list-style-type: none; 
+      a{ 
+        font: 20px Monaco, Monospace; 
+        color: white;
+      } 
+    } 
+  }
+}
+
+.section-title{ 
+  background-color: $background;
+  color: black;
+}
+
+.ruby-cve-container { 
+  overflow-y: scroll;
+  height: 500px;
+}
+
+.sub-section{
+  background-color: #8B888C;
+  ul { padding-left: 2px; } 
+  li { 
+    list-style-type: none;
+    .summary{
+      padding: 5px;
+    }
+  }
+}
+
+.sub-section-title{
+  background-color: white;
+  padding: 0px;
+  margin: 0px;
+  color: black;
+}
+
+.main-content{
+  .main_photo{
+    border-radius: 2%;
+  }
+  margin: 0 0 0 300px;
+}

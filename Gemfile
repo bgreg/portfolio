@@ -12,9 +12,10 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
-gem 'high_voltage'
 gem 'rails_12factor'
 gem 'ruby-progressbar'
+gem 'bourbon'
+gem 'neat'
 
 group :development, :test do
   gem 'byebug'

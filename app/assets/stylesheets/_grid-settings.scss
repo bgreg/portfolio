@@ -1,0 +1,12 @@
+@import 'bourbon';
+@import "neat-helpers";
+
+// Grid settings
+$column: 90px;
+$gutter: 10px;
+$grid-columns: 10;
+$max-width: 1900px;
+
+// Breakpoints
+$tablet: new-breakpoint(max-width 768px 8);
+$mobile: new-breakpoint(max-width 480px 4);
