@@ -1,0 +1,1 @@
+00 00 * * * cd /Users/you/projects/myrailsapp && /usr/local/bin/rake RAILS_ENV=production db:download
