@@ -3,32 +3,31 @@ require 'open-uri'
 module ExposureLoader
 
   def download(file)
-    short_name    = file.rpartition("/").last
-    progress_bar  = ProgressBar.create(
-                      smoothing: 0.6,
-                      title: "Downloading & Parsing " + short_name,
-                      total: 1)
+    Rails.logger.info("\tStaring NVD Download at #{Time.now}")
 
-    Nokogiri::XML(open(file)).css('entry').each do |e|
-      exposure            = parse_xml_into_exposure(e)
-      refs                = parse_xml_into_references(e)
-      exposure.references << refs
-      if exposure.save
-        progress_bar.total += 1
-        progress_bar.increment
+    ActiveRecord::Base.transaction do
+      Nokogiri::XML(open(file)).css('entry').each do |e|
+        exposure            = parse_xml_into_exposure(e)
+        refs                = parse_xml_into_references(e)
+        exposure.references << refs
+        if exposure.save
+          Rails.logger.info("\tNVD record Saved")
+        else
+          Rails.logger.info("\tNVD record failed: #{exposure.errors.full_messages}")
+        end
       end
     end
 
-    progress_bar.finish
-    progress_bar.stop
     report_download_statistics
   end
 
   private
 
   def report_download_statistics
-    puts "\n\nTotal exposures: #{Exposure.count}"
-    puts "Ruby records: #{Exposure.where(ruby: true).length}"
+    Rails.logger.info(
+      "\n\t NVD Download Completed at: #{Time.now} \n" \
+      "\t Total exposures: #{Exposure.count}" \
+      "\t Ruby records: #{Exposure.where(ruby: true).count}" )
   end
 
   def parse_xml_into_exposure(e)
