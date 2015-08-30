@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 gem 'rails'
+gem 'sqlite3'
+
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
@@ -11,7 +13,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'high_voltage'
-gem 'pg'
 gem 'rails_12factor'
 gem 'ruby-progressbar'
 

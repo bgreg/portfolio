@@ -11,9 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150830170906) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "exposures", force: :cascade do |t|
+    t.string   "cve_id"
+    t.text     "summary"
+    t.text     "published"
+    t.string   "cvss_severity"
+    t.text     "title"
+    t.integer  "cvss_v2_base_score"
+    t.text     "access_vector"
+    t.text     "access_complexity"
+    t.text     "authentication"
+    t.text     "confidentiality_impact"
+    t.text     "integrity_impact"
+    t.text     "availablility_impact"
+    t.boolean  "ruby"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "exposures", ["cve_id"], name: "index_exposures_on_cve_id"
+  add_index "exposures", ["ruby"], name: "index_exposures_on_ruby"
+
+  create_table "references", force: :cascade do |t|
+    t.text     "source"
+    t.text     "url"
+    t.integer  "exposure_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
