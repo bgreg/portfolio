@@ -7,6 +7,7 @@ namespace :db do
   desc "Download all exposure data"
   task download: :environment do
     include ExposureLoader
-    download(ENV['NVD_URL'])
+    path = ENV['NVD_URL'] || "https://nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2014.xml"
+    download(path)
   end
 end
