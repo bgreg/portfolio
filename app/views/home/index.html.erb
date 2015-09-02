@@ -1,54 +1,38 @@
 <%= content_for(:page_title, "Greg McGuirk") %> 
+<%= content_for(:home_active, "active") %> 
 
-<div class="home">
 
-  <nav class="left-dock sliding-panel-content">
-    <section class="links">
-      <h4 class='section-title'> Links </h4>
-      <ul>
-        <li><a href="https://www.linkedin.com/pub/greg-mcguirk/32/603/686/en">LinkedIn</a></li>
-        <li><a href="https://twitter.com/bgregmc">Twitter</a> </li>
-        <li><a href="https://github.com/bgreg">Github</a></li>
-        <li><a href="http://www.meetup.com/Silicone-Valley-Ruby-Workshop/">RubyWorkshop</a></li>
-        <li><a href="mailto:bgregmc@icloud.com?Subject=Hello" target="_top">Contact Me</a></li>
-      </ul>
-    </section>
+<h1 class="page-header">
+  Undefined Method on <code>nil</code>
+  <%# <section><%= image_tag("imonaboat.jpg", class: 'main_photo') %1></section> %>
+</h1>
 
-    <section class="ruby-cve">
-      <h4 class='section-title'> <%= @exposures.count %> Ruby CVE's in the last 90 days
-        <a href="https://web.nvd.nist.gov/view/vuln/search-results?query=Ruby&search_type=all&cves=on">Details</a> 
-      </h4>
-      
-      <section class="ruby-cve-container">
-        <% @exposures.reverse.each do |exposure| %> 
-          <section class="sub-section">
-            <ul>
-              <li> 
-                <p class="sub-section-title">
-                  <%= exposure.cve_id %>
-                </p>
-                <p class="sub-section-title">
-                  <%= time_tag Date.parse exposure.published %> 
-                </p>
-                <p class="sub-section-title">
-                 <%= exposure.cvss_severity %> 
-                </p>
-              </li>
-              <li>
-                <p class="summary">
-                <%= exposure.summary %> 
-                </p>
-              </li>
-            </ul>
-          </section>
-        <% end %> 
-      </section>
+<a href="" class="blog title">
+  <section><%= image_tag("imonaboat.jpg", class: 'main_photo') %></section>
+</a>
 
-    </section>
-  </nav>
+<%# <p>Ephemerial Bullshit and the Useless 7</p> %>
+<%# <p>Level 5 Ruby Cleric</p> %>
+<%# <p>Things that happen on caltrain</p> %>
+<%# <p>Undefined Is not a function</p> %>
+<%# <p>Unicorn Herding</p> %>
 
-  <section class="main-content">
-    <h3> Greg Mcguirk </h3>
-    <%= image_tag("imonaboat.jpg", class: 'main_photo') %> 
-  </section>
+<div class="row">
+  <div class="col-lg-8">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="well">
+      <h4> Upcomming Events</h4>
+      <p>Lorem ipsum dolor sit amet,</p>
+    </div>
+    <div class="well">
+      <h4>Currently reading</h4>
+      <p>Lorem ipsum dolor </p>
+    </div>
+    <a class="twitter-timeline" href="https://twitter.com/bgregmc" data-widget-id="638812761254825984">Tweets by @bgregmc</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
 </div>
+

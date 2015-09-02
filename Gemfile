@@ -14,8 +14,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'rails_12factor'
 gem 'ruby-progressbar'
-gem 'bourbon'
-gem 'neat'
+gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'byebug'
