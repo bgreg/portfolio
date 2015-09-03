@@ -1,42 +1,33 @@
+<%= content_for(:page_title, "Ruby News") %> 
 <%= content_for(:news_active, "active") %> 
 
 <section class="ruby-cve">
-  <h4 class=''> <%= @exposures.count %> Ruby CVE's in the last 90 days
-    <a href="https://web.nvd.nist.gov/view/vuln/search-results?query=Ruby&search_type=all&cves=on">Details</a> 
-  </h4>
-
   <h4 class=''> 
-     <%= @all_count %> Since the beginning of the year.
+    <%= @exposures.count %> Ruby CVE's in the last 90 days, and <%= @all_count %> since the beginning of the year.
+    <a href="https://web.nvd.nist.gov/view/vuln/search-results?query=Ruby&search_type=all&cves=on">Details</a>
   </h4>
   <hr>
   
   <div class="row">
-    <div class="col-lg-8">
+    <div class="col-sm-8">
+
       <section class="ruby-cve-container">
-        <% @exposures.reverse.each do |exposure| %> 
-          <section class="well sub-section">
-            <ul class="list-unstyled">
-              <li> 
-                <p class="sub-section-title"> <%= exposure.cve_id %> </p>
-                <p class="sub-section-title"> <%= time_tag Date.parse exposure.published %> </p>
-                <p class="sub-section-title"> <%= exposure.cvss_severity %> </p>
-              </li>
-              <li>
-                <p class="summary"> <%= exposure.summary %> </p>
-              </li>
-            </ul>
-          </section>
-        <% end %> 
+        <%= render partial: "ruby_cve_list", locals: {exposures: @exposures } %> 
       </section>
+
     </div>
-    <div class="col-lg-4">
+
+    <div class="col-sm-4">
+
       <div class="well">
         <h4>Current Ruby Version:</h4>
         https://developer.github.com/v3/repos/releases/
       </div>
+
       <div class="well">
         <h4>Current Rails Version:</h4>
       </div>
+
     </div>
   </div>
 </section>

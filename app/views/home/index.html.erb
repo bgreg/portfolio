@@ -1,16 +1,19 @@
 <%= content_for(:page_title, "Greg McGuirk") %> 
 <%= content_for(:home_active, "active") %> 
 
-
-<h1 class="page-header">
-  Undefined Method on <code>nil</code>
+<%# <h1 class="page-header"> %>
+  <%# Undefined Method on <code>nil</code> %>
   <%# <section><%= image_tag("imonaboat.jpg", class: 'main_photo') %1></section> %>
-</h1>
+<%# </h1> %>
 
-<a href="" class="blog title">
-  <section><%= image_tag("imonaboat.jpg", class: 'main_photo') %></section>
-</a>
-
+<div class="row">
+  <div class="col-lg-12">
+    <section class="pull-left"><%= image_tag("imonaboat.jpg", class: 'main_photo') %></section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
+  </div>
+  <%# <div class="col-lg-8"> %>
+  <%# </div> %>
+</div>
 <%# <p>Ephemerial Bullshit and the Useless 7</p> %>
 <%# <p>Level 5 Ruby Cleric</p> %>
 <%# <p>Things that happen on caltrain</p> %>
@@ -18,21 +21,19 @@
 <%# <p>Unicorn Herding</p> %>
 
 <div class="row">
-  <div class="col-lg-8">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
-  </div>
-
-  <div class="col-lg-4">
-    <div class="well">
+  <div class="col-sm-8">
+    <div class="pull-left well">
       <h4> Upcomming Events</h4>
       <p>Lorem ipsum dolor sit amet,</p>
     </div>
-    <div class="well">
+    <div class="pull-left well">
       <h4>Currently reading</h4>
       <p>Lorem ipsum dolor </p>
     </div>
-    <a class="twitter-timeline" href="https://twitter.com/bgregmc" data-widget-id="638812761254825984">Tweets by @bgregmc</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <div class="pull-left">
+      <a class="twitter-timeline" href="https://twitter.com/bgregmc" data-widget-id="638812761254825984">Tweets by @bgregmc</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
   </div>
 </div>
 

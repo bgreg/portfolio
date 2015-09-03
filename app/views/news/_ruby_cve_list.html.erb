@@ -1,0 +1,14 @@
+<% exposures.reverse.each do |exposure| %> 
+  <section class="well sub-section">
+    <ul class="list-unstyled">
+      <li> 
+        <p class="sub-section-title"> <%= exposure.cve_id %> </p>
+        <p class="sub-section-title"> <%= time_tag Date.parse exposure.published %> </p>
+        <p class="sub-section-title"> <%= exposure.cvss_severity %> </p>
+      </li>
+      <li>
+        <p class="summary"> <%= exposure.summary %> </p>
+      </li>
+    </ul>
+  </section>
+<% end %> 

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources :home
-  resources :blog
-  resources :news
+  resources :home, only: [:index]
+  resources :blog, only: [:index]
+  resources :news, only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
