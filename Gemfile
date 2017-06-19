@@ -1,22 +1,68 @@
 source 'https://rubygems.org'
 
-
-ruby '2.2.2'
-
-gem 'rails'
-gem 'sass-rails'
-gem 'uglifier'
-gem 'coffee-rails'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder'
-gem 'high_voltage'
-gem 'pg'
-gem 'rails_12factor'
-
-group :development, :test do
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
 end
 
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.1.1'
+# Use postgresql as the database for Active Record
+gem 'pg', '~> 0.18'
+# Use Puma as the app server
+gem 'puma', '~> 3.7'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.5'
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+end
+
+group :development do
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
+end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'administrate'
+gem 'bundler-audit'
+gem 'devise'
+gem 'fast_blank'
+gem 'kaminari'
+gem 'pg_search'
+source 'https://gems.contribsys.com/' do
+  gem 'sidekiq-pro'
+end
+
+group :production do
+  gem 'exception_notification', '>= 4.2.1'
+end
+
+group :production, :development do
+  gem 'secure_headers'
+end
+
+group :development do
+  gem 'brakeman'
+  gem 'rubocop'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'launchy', require: false
+  gem 'valid_attribute'
+  gem 'timecop'
+end
